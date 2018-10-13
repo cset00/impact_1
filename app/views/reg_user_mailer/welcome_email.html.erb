@@ -4,10 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
+    
+    <%= render "email_partials/html_header" %>
 
-    <div>
-        <%= image_tag attachments['impact-red-logo.svg'].url %>
-    </div>
     <h1>Thanks for volunteering, <%= @reg_user.first_name %></h1>
     <p>
         Thank you for signing to be a volunteer for impact! Every volunteer helps us to make a difference.
@@ -20,10 +19,8 @@
         <%= "#{ENV['HOST']}/events" %>
     </div>
     <small>(or copy and paste the link into your browser).</small>
-    <div>
-        <h1>Need help?</h1>
-        <p>If you require any assistance, or have any questions, please contact: help@imact.org.au</p>
-    </div>
+    
+    <%= render 'email_partials/html_help_section' %>
 
     <p>
         Best regards,
@@ -32,10 +29,7 @@
         The Impact Team
     </p>
 
-    <div>
-        <span>&copy; 2018 Copyright Impact  - Terms and Conditions - Privacy Policy</span>
-        <span>Unsubscribe</span>
-    </div>
+    <%= render 'email_partials/html_copyr_footer' %>
 
   </body>
 </html>
