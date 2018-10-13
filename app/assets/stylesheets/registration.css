@@ -77,34 +77,46 @@ p.rego {
 
 /*styling for event create*/
 
-.event-new {
+.event-new,
+.event-edit {
 	text-align: center;
 }
 
-.event-new form {
+.event-new form, 
+.event-edit form {
 	text-align: center;
 	font-size: 1.5em;
 }
 
-.event-new input {
+.event-new input,
+.event-edit input {
 	text-align: center;
 	padding: 0.4em;
 	border-radius: 5px;
     margin: 5px;
     width: 35%;
     font-size: 0.8em;
-    font-family: inherit;
 }
 
 #event_address, 
 #event_description {
 	font-size: 0.8em;
 	padding: 0.4em;
-	font-family: inherit;
 	width: 35%;
 	border-radius: 5px;
 	text-align: center;
 }
+
+#event_date_time_1i,
+#event_date_time_2i,
+#event_date_time_3i,
+#event_date_time_4i,
+#event_date_time_5i {
+	font-size: 0.8em;
+	margin-bottom: 10px;
+}
+
+/*styling for event edit*/
 
 @media only screen 
   and (min-device-width: 375px) 
