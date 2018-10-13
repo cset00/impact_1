@@ -1,5 +1,27 @@
 <%# #if logged in %>
 
-<% @reg_users.each do |user|%>
-	<%= user.first_name %>
-<% end %>
+<h2>Registered Users</h2>
+
+<table>
+  <tr>
+		<th>Active</th>
+    <th>First Name</th>
+		<th>Last Name</th>
+    <th>Email</th>
+    <th>Contact Number</th>
+		<th>School</th>
+		<th>Suburb</th>
+  </tr>
+	<% @reg_users.each do |user|%>
+  <tr>
+    <td>yes</td>
+    <td><%= user.first_name %></td>
+		<td> <%= user.last_name %></td>
+    <td><%= user.email %></td>
+		<td><%= user.contact_num %></td>
+		<td><%= user.school %></td>
+		<td><%= user.suburb %></td>
+  </tr>
+<% end %>  
+</table>
+
