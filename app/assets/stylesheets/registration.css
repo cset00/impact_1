@@ -75,6 +75,12 @@ p.rego {
     width: 5%
 }
 
+/*styling for event create*/
+
+.event-new {
+	text-align: center;
+}
+
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
