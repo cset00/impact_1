@@ -1,15 +1,41 @@
 class RegUsersController < ApplicationController
+    before_action :authenticate!, except: [ :unsubscribe, :new, :create ]
 
 	def index
 		@reg_users = RegUser.all
 	end
 
 	def show
-		@reg_users = RegUser.all
+		@reg_user = RegUser.find(params[:id])
 	end
 
 	def new
 		@reg_user = RegUser.new
+    end
+
+    def edit
+        @reg_user = RegUser.find(params[:id])
+    end
+    
+    def update
+        @reg_user = RegUser.find(params[:id])
+        @reg_user.update_attributes(create_params)
+        if @reg_user.save
+            redirect_to reg_user_path(@reg_user.id)
+        else
+            render :edit
+        end
+    end
+    
+    def confirm_unsub
+		@reg_user = RegUser.find(params[:id])
+    end
+
+    def unsub
+        @reg_user = RegUser.find(params[:id])
+        @reg_user.active_sub = false
+        @reg_user.save
+        redirect_to reg_user_path(@reg_user.id)
 	end
 
 	def create
