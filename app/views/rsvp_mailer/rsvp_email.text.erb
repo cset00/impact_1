@@ -9,7 +9,7 @@ You're signed up to attend
 
 Date and Time:
 
-<%= @rsvp.event.date_time.dt) %>
+<%= @rsvp.event.dt %>
 
 Address:
 <%= @rsvp.event.address %>
@@ -18,7 +18,7 @@ Address:
 
 
 If you're no longer able to attend copy and paste this into your browser.
-<%= "#{ENV['HOST']}/#{@rsvp.id}/cancel" %>
+<%= "#{ENV['HOST']}/rsvps/#{@rsvp.id}/cancel" %>
 
 
 Need help?

@@ -22,9 +22,9 @@
     <p>
         <%= @event.description %>
     </p>
-    <button>
-        http://events.impact.org.au?uid=1002349eventid=10003434
-    </button>
+    <div>
+        <%= "#{ENV['HOST']}/rsvps/new?event_id=#{@event.id}&reg_user_id=#{@reg_user.id}" %>
+    </div>
     <small>(or copy and paste the link into your browser).</small>
     
     <div>
