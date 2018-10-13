@@ -10,6 +10,15 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
+    #placeholders
+    placeholders:
+      reg_user:
+        first_name: 'First Name'
+        last_name: 'Last Name'
+        email: 'Email Address'
+        school: 'School Name'
+        suburb: 'Schools Suburb'
+        contact_num: 'Best Contact Number'
     # Examples
     # labels:
     #   defaults:
