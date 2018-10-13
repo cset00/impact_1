@@ -4,10 +4,10 @@
 
 <%= simple_form_for @event, :method => 'post' do |f| %>
     <%= f.input :date_time, label: 'Your username please', error: 'Date and time mandatory, please make sure you enter them.' %>
-    <%= f.input :address %>
+    <%= f.input :address, :class => "text-input"%>
     <%= f.input :subject %>
-    <%= f.input :description, inline_label: 'This will appear on the email' %>
-    <%= f.button :submit %>
+    <%= f.input :description, inline_label: 'This will appear on the email', :class => "text-input" %>
+    <%= f.button :submit, :class => "reg-button" %>
 <% end %>
 
 </div>
