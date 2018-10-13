@@ -1,50 +1,52 @@
 <%# #if logged in %>
 
+<div class="user-wrapper">
+	<h2><%= @reg_user.first_name %> <%= @reg_user.last_name %></h2>
 
-<h2><%= @reg_user.first_name %> <%= @reg_user.last_name %></h2>
+	<ul class="user-edit-sub">
+			<li>
+					<%= link_to 'Edit me', edit_reg_user_path(@reg_user.id) %>
+			</li>
+			<li>
+					<%= form_tag "/reg_users/#{@reg_user.id}/unsub", method: 'put' do %>
+			<button class="submit-btn reg-button">unsubscribe user</button>
+	<% end %> 
+			</li>
+	</ul>
 
-<ul>
-    <li>
-        <%= link_to 'Edit me', edit_reg_user_path(@reg_user.id) %>
-    </li>
-    <li>
-        <%= form_tag "/reg_users/#{@reg_user.id}/unsub", method: 'put' do %>
-    <button class="submit-btn">unsubscribe user</button>
-<% end %> 
-    </li>
-</ul>
+	<p>
+			<strong>First Name</strong>
+			<%= @reg_user.first_name %>
+	</p>
 
-<p>
-    <strong>First Name</strong>
-    <%= @reg_user.first_name %>
-</p>
+	<p>
+			<strong>Last Name</strong>
+			<%= @reg_user.last_name %>
+	</p>
 
-<p>
-    <strong>Last Name</strong>
-    <%= @reg_user.last_name %>
-</p>
+	<p>
+			<strong>Email</strong>
+			<%= @reg_user.email %>
+	</p>
 
-<p>
-    <strong>Email</strong>
-    <%= @reg_user.email %>
-</p>
+	<p>
+			<strong>Best Contact #</strong>
+			<%= @reg_user.contact_num %>
+	</p>
 
-<p>
-    <strong>Best Contact #</strong>
-    <%= @reg_user.contact_num %>
-</p>
+	<p>
+			<strong>School</strong>
+			<%= @reg_user.school %>
+	</p>
 
-<p>
-    <strong>School</strong>
-    <%= @reg_user.school %>
-</p>
+	<p>
+			<strong>School Suburb</strong>
+			<%= @reg_user.suburb %>
+	</p>
 
-<p>
-    <strong>School Suburb</strong>
-    <%= @reg_user.suburb %>
-</p>
+	<p>
+			<strong>Currently Subscribed?</strong>
+			<%= @reg_user.active_sub ? "Yes" : "No" %>
+	</p>
 
-<p>
-    <strong>Currently Subscribed?</strong>
-    <%= @reg_user.active_sub ? "Yes" : "No" %>
-</p>
+</div>
