@@ -9,7 +9,7 @@
     <label> I am 16 years or under</label>
   </form>
   
-  <div class="student" >
+  <div class="student hidden" >
     <%= f.input :school, label: 'What school do you go to?' %>
     <%= f.input :suburb, label: 'Enter your school\'s suburb' %>
   </div>
@@ -18,14 +18,17 @@
   <%= f.button :submit %>
 
 <% end %>
-
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script>
+
   var studentDiv = document.querySelector(".student")
   var checkboxStudent = document.querySelector("#sixteen")
-  studentDiv.style.display = "none"
-  if (checkboxStudent.checked){ 
-    studentDiv.style.display = "block"
-  }
+  $(checkboxStudent).on('change', function() {     
+     $(studentDiv).toggleClass('hidden');        
+});
+
+
+
 </script>
 
 <!-- <div class="container">
