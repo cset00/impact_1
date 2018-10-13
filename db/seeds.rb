@@ -17,7 +17,7 @@ hermoine = RegUser.create(first_name: "Hermione", last_name: "Granger", email: "
 
 ron = RegUser.create(first_name: "Ron", last_name: "Weasley", email: "ron@leaheramo.tech", school: "Hogwarts", suburb: "Hogsmeade", active_sub: true, contact_num: "333")
 
-admin = AdminUser.create(firstname: 'Kathy', lastname: 'Admin', email: "admin@email.com" , pass_digest: 'pudding')
+admin = AdminUser.create(firstname: 'Kathy', lastname: 'Admin', email: "admin@email.com" , password:'pudding')
 
 event1 = Event.create(active: true, subject: "Christmas 2018" , description: "Help us put together bags of love for women and children in need this Christmas" , address: "Glen Eira College Sports Hall",  date_time: DateTime.new(2018, 12,1))
 
