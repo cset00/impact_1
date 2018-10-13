@@ -38,6 +38,13 @@ class EventsController < ApplicationController
     #add redirect
   end
 
+  def cancel
+    event = Event.find(params[:id])
+    event.cancelled = true
+    event.save
+  end
+
+
   private
   
   def create_params
