@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/login', to: 'admin_users#login'
 
-  resources :reg_users, only: [:index, :show, :new]
+  resources :reg_users, only: [:index, :show, :new, :create]
   get '/login', to:'admin_users#login'
   get '/signup', to:'admin_users#new'
 
