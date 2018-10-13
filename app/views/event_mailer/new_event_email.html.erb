@@ -4,7 +4,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-
+    <%= render 'email_partials/email_style' %>
     <%= render "email_partials/html_header" %>
     
     <h1>We have a new event, <%= @reg_user.first_name %></h1>
@@ -22,7 +22,7 @@
         <%= @event.description %>
     </p>
     <div class="event-link">
-        <%= "#{ENV['HOST']}/rsvps/new?event_id=#{@event.id}&reg_user_id=#{@reg_user.id}" %>
+        <%= link_to "#{ENV['HOST']}/rsvps/new?event_id=#{@event.id}&reg_user_id=#{@reg_user.id}", "#{ENV['HOST']}/rsvps/new?event_id=#{@event.id}&reg_user_id=#{@reg_user.id}" %>
     </div>
     <small>(or copy and paste the link into your browser).</small>
     
