@@ -1,5 +1,4 @@
 class AdminUsersController < ApplicationController
-  attr_accessor :id, :name
 
   def index
 		@admin_users = AdminUser.all
@@ -11,6 +10,11 @@ class AdminUsersController < ApplicationController
 
   def new
       @admin_users = AdminUser.all
-      render :login
-	end
+  end
+  
+  def create
+    @admin_user = AdminUser.new
+    @admin_user.email = params[:email]
+    
+  end
  end
