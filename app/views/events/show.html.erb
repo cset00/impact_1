@@ -10,8 +10,13 @@
 <%= @event.description %>
 
 <h4> Created By:</h4>
-<%= @event.admin_user.full_name if @event.admin_user.present? %> <% # delete the condition when userlogin implemented %>
+<%= @event.admin_user.full_name if @event.admin_user.present? %>
 
-            <%= form_tag "/events/#{event.id}", method: 'delete' do %>
-                <button class="submit-btn">Delete</button>
-            <% end %> 
+
+<%= form_tag "/events/#{@event.id}", method: 'delete' do %>
+  <button class="submit-btn">Delete</button>
+<% end %> 
+
+<%= form_tag "/events/#{@event.id}/cancel", method: 'post' do %>
+  <button class="submit-btn">Cancel</button>
+<% end %> 

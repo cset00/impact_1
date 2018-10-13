@@ -1,10 +1,12 @@
+<%= link_to "new event", new_event_path %>
+
 <table>
     <th>
         <td>Date</td>
         <td>Time</td>
         <td>Subject</td>
         <td>Location</td>
-        <td colspan=3></td>
+        <td colspan=4></td>
     </th>
     <% @events.each do |event| %>
     <tr>
@@ -17,6 +19,11 @@
         <td>
             <%= form_tag "/events/#{event.id}", method: 'delete' do %>
                 <button class="submit-btn">Delete</button>
+            <% end %> 
+        </td>
+        <td>
+            <%= form_tag "/events/#{@event.id}/cancel", method: 'post' do %>
+                <button class="submit-btn">Cancel</button>
             <% end %> 
         </td>
     </tr>
