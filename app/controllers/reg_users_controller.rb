@@ -14,13 +14,15 @@ class RegUsersController < ApplicationController
 
 	def create
 		@reg_user = RegUser.new(create_params)
-    	@reg_user.save
+    	if @reg_user.save 
+    		redirect_to '/reg_users/get'
+    	end
 	end
 
 	  private
 
 	  def create_params
-	    params.require(:event).permit(:date_timeaddress, :subject, :description)
+	    params.require(:reg_user).permit(:first_name, :last_name, :email, :school, :suburb, :contact_num)
 	  end
 
 end
