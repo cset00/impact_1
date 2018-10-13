@@ -9,7 +9,7 @@
     
     <h1>We have a new event, <%= @reg_user.first_name %></h1>
     <p>
-        Thank you for your on goiong support for Impact for Women! Every volunteer helps us to make a difference.
+        Thank you for your on goiong support for <span>impact</span> for Women! Every volunteer helps us to make a difference.
     </p>
     <p>We have a new event comming up</p>
     <p>
@@ -21,7 +21,7 @@
     <p>
         <%= @event.description %>
     </p>
-    <div>
+    <div class="event-link">
         <%= "#{ENV['HOST']}/rsvps/new?event_id=#{@event.id}&reg_user_id=#{@reg_user.id}" %>
     </div>
     <small>(or copy and paste the link into your browser).</small>

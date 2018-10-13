@@ -1,0 +1,48 @@
+
+/* email footer */
+.email-footer {
+  text-align: center;
+}
+
+.privacy-policy {
+  color: #FC0D1B;
+  font-size: 14px;
+}
+
+.unsubscribe-link {
+  color: gray;
+  font-size: 10px;
+}
+
+
+/* email header */
+
+.email-logo {
+  max-width: 80%;
+  vertical-align: center;
+}
+
+/* email assistance note */
+.email-assist-wrapper {
+  max-width: 80%;
+  margin-left: 10%; 
+}
+
+.email-assist-image {
+  float: left;
+}
+
+.event-link-box {
+  background-color: #FC0D1B;
+  max-width: 75%;
+  margin-left: 10%;
+  padding: 5%;
+}
+
+.email-assist-contact {
+  float: right;
+}
+
+.impact-text {
+  font-weight: 600; 
+}
