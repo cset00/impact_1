@@ -1,16 +1,16 @@
 <h3> Attendees </h3>
 
 <div class="attendees">
-  <%# @event.rsvps.each do |rsvp| %>
-    <%#= rsvp.fullname %>
-    <%#= rsvp.email %>
-    <%#= rsvp.phone %>
+  <% @event.rsvps.each do |r| %>
+    <%= r.fullname %>
+    <%= r.email %>
+    <%= r.phone %>
   
-    <span>Name Blah</span>
+    
     <input type="checkbox" value="Attending">
     <label for="">Mark as attending</label>
 
-    <%# end %>
+    <% end %>
 </div>
 
 <div>
