@@ -11,8 +11,9 @@ class AdminUsersController < ApplicationController
 	end
 
   def new
-      @admin_users = AdminUser.all
-      render :login
+    @admin_users = AdminUser.all
+    render :login
 	end
 end
+
 
