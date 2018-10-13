@@ -1,0 +1,19 @@
+<table>
+    <th>
+        <td>Date</td>
+        <td>Time</td>
+        <td>Subject</td>
+        <td>Location</td>
+        <td colspan=3></td>
+    </th>
+    <%= @events.each do |event| %>
+    <tr>
+        <td><%= event.date_time.strftime("%d%m%Y") %></td>
+        <td><%= event.date_time.strftime("%l:%M %P") %></td>
+        <td><%= event.subject %></td>
+        <td><%= event.location %></td>
+        <td>SHOW</td>
+        <td>EDIT</td>
+        <td>DESTROY</td>
+    </tr>
+</table>
