@@ -5,3 +5,40 @@
 .pointer {
 	cursor: pointer;
 }
+
+h1.homepage  {
+	color: #FC0D1B;
+	text-transform: uppercase;
+	letter-spacing: 0.4em;
+}
+
+.homepage-wrapper {
+	text-align: center;
+}
+
+.homepage-wrapper p {
+	width: 50%;
+	margin: 30px auto;
+}
+
+.highlight {
+	font-size: 1.5em;
+}
+
+span.homepage {
+	font-weight: bold;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+	.homepage-wrapper {
+		font-size: 2em;
+	}
+
+	.homepage-wrapper p {
+		width: 80%;
+	}
+}
+
