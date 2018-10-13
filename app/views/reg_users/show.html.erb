@@ -2,7 +2,7 @@
 
 <h2>Registered Users</h2>
 
-<table>
+<table class="reg-table">
   <tr>
 		<th>Active</th>
     <th>First Name</th>
@@ -14,9 +14,16 @@
   </tr>
 	<% @reg_users.each do |user|%>
   <tr>
-    <td>yes</td>
+    
+		<td>
+			<% if user.active_sub %>
+				Yes
+			<% else %>
+				No
+			<% end %>
+		</td>
     <td><%= user.first_name %></td>
-		<td> <%= user.last_name %></td>
+		<td><%= user.last_name %></td>
     <td><%= user.email %></td>
 		<td><%= user.contact_num %></td>
 		<td><%= user.school %></td>

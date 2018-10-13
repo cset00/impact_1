@@ -14,7 +14,7 @@
     <%= f.input :suburb, label: 'Enter your school\'s suburb' %>
   </div>
   <%= f.input :contact_num, label: 'Best contact number' %>
-  
+  <% f.input :active_sub, :as => :hidden, :input_html => { :value => true } %>
   <%= f.button :submit %>
 
 <% end %>
