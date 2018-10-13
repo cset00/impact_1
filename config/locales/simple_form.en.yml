@@ -19,6 +19,10 @@ en:
         school: 'School Name'
         suburb: 'Schools Suburb'
         contact_num: 'Best Contact Number'
+      event:
+        address: 'Enter address'
+        subject: 'Event subject/title'
+        description: 'Event description'
     # Examples
     # labels:
     #   defaults:
