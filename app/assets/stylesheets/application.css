@@ -63,6 +63,9 @@ nav li {
 	font-size: 2em;
 }
 
+.bold {
+	font-weight: bold;
+}
 
 @media only screen 
   and (min-device-width: 375px) 
