@@ -5,6 +5,7 @@ class RegUsersController < ApplicationController
 	end
 
 	def show
+		@reg_users = RegUser.all
 	end
 
 	def new
