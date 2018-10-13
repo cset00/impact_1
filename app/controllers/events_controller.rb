@@ -19,6 +19,7 @@ class EventsController < ApplicationController
     @event.active = true
     @event.cancelled = false
     if @event.save
+        EventMailer.new_event_email(@event, RegUser.first).deliver_later
         redirect_to events_path
     else
         render :new
