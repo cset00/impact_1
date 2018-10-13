@@ -1,9 +1,119 @@
-.event-details {
+.show-event {
+  display: flex;
+  justify-content: flex-start;
+}
 
+.event-details {
+  // display: inline-block;
+  // width: 40vw;
+  // background: green;
+  margin-right: 30px;
+}
+
+.attendees-box {
+  // display: inline-block;
+  // background: red;
+  width: 70%;
+}
+
+.event-h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .event-h4 {
   margin: 15px 0 5px 0;
   padding: 0;
 }
+
+.no-rsvp-btn {
+  margin-bottom: 30px;
+}
+
+.attendees {
+  // border: 1px solid #FC0D1B;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 20px 20px 0px;
+  padding: 15px;
+  -webkit-box-shadow: 0px 3px 21px 0px rgba(184,182,183,1);
+  -moz-box-shadow: 0px 3px 21px 0px rgba(184,182,183,1);
+  box-shadow: 0px 3px 21px 0px rgba(184,182,183,1);
+}
+
+.attendees-right {
+  // align-content: center;
+  height: 70px;
+  line-height: 70px;
+  padding-left: 15px;
+}
+
+.container-cbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container-cbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container-cbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container-cbox input:checked ~ .checkmark {
+  background-color: #FC0D1B;
+}
+
+.checkmark {
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  height: 40px;
+  width: 40px;
+  background-color: #eee;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container-cbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container-cbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.event-p {
+  margin: 0;
+}
+
+.att-checkbox {
+  padding: 10px;
+}
+
 
