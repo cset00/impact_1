@@ -8,18 +8,18 @@
     <header>
         <div>placeholder for a logo</div>
     </header>
-    <h1>Thanks for volunteering, <%= @reg_user.first_name %></h1>
+    <h1>Hi <%= @rsvp.reg_user.first_name %>,</h1>
     <p>
        Thank you for signing to be a part of our event! Every volunteer helps us to make a difference.
     </p>
     <p>    
         You're signed up to attend
-        <%= @event.subject %> - <%= @event.date_time %>
+        <%= @rsvp.event.subject %> - <%= @rsvp.event.dt %>
     </p>
 
     <p>
         Address:
-        <%= @event.address %>
+        <%= @rsvp.event.address %>
     </p>
 
     <p>
