@@ -1,6 +1,7 @@
 .show-event {
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
 }
 
 .event-details {
@@ -12,8 +13,8 @@
 
 .attendees-box {
   // display: inline-block;
-  // background: red;
-  width: 70%;
+  // background: green;
+  width: 100%;
 }
 
 .event-h2 {
@@ -24,21 +25,28 @@
 .event-h4 {
   margin: 15px 0 5px 0;
   padding: 0;
+  display: inline;
+  font-weight: 800;
 }
 
-.no-rsvp-btn {
-  margin-bottom: 30px;
-}
 
 .attendees {
   // border: 1px solid #FC0D1B;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 20px 20px 20px 0px;
   padding: 15px;
   -webkit-box-shadow: 0px 3px 21px 0px rgba(184,182,183,1);
   -moz-box-shadow: 0px 3px 21px 0px rgba(184,182,183,1);
   box-shadow: 0px 3px 21px 0px rgba(184,182,183,1);
+  width: 350px;
+}
+
+.att-flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .attendees-right {
@@ -115,5 +123,20 @@
 .att-checkbox {
   padding: 10px;
 }
+
+.rsvp-reg-btn {
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.btn-containers {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+// .no-rsvp-btn {
+//   margin-bottom: 30px;
+// }
 
 
