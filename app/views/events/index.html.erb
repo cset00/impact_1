@@ -1,12 +1,12 @@
 <%= link_to "new event", new_event_path %>
 
-<table>
+<table class="reg-table">
     <th>
-        <td>Date</td>
-        <td>Time</td>
-        <td>Subject</td>
-        <td>Location</td>
-        <td colspan=4></td>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Subject</th>
+        <th>Location</th>
+        <th colspan=4></th>
     </th>
     <% @events.each do |event| %>
     <tr>

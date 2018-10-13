@@ -1,14 +1,14 @@
 Impact for Women Thanks you for volunteering!
 =================================================
-Thanks for volunteering, <%= @reg_user.first_name %>
+Hi <%= @rsvp.reg_user.first_name %>,
 
 Thank you for signing to be a part of our event! Every volunteer helps us to make a difference.
 
 You're signed up to attend
-<%= @event.subject %> - <%= @event.date_time %>
+<%= @rsvp.event.subject %> - <%= @rsvp.event.dt %>
 
 Address:
-<%= @event.address %>
+<%= @rsvp.event.address %>
 
 
 If you're no longer able to attend copy and paste this into your browser to view upcoming events.

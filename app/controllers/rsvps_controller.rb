@@ -9,12 +9,26 @@ class RsvpsController < ApplicationController
 
   def new
     @rsvp = Rsvp.new
+    @event = Event.find(params[:event_id])
+    @reg_user = RegUser.find(params[:reg_user_id])
+    
   end
 
   def create
+    
     @rsvp = Rsvp.new(create_params)
+    @event = @rsvp.event
+    @reg_user = @rsvp.reg_user
     @rsvp.active = true
-    @rsvp.save 
+    if @rsvp.save 
+        RsvpMailer.rsvp_email(@rsvp).deliver_later
+        @message = "Thank you!! You're now registered to go to #{@event.subject}"
+        render :template => 'homepage/index'
+    else
+        @message = @rsvp.errors.full_messages
+        render :new
+    end
+
     #replace above with correct redirect route if saved
     # if @rsvp.save
     #   redirect_to '/rsvps/get'
@@ -23,9 +37,17 @@ class RsvpsController < ApplicationController
 
 
   def cancel
-    rsvp = Event.find(params[:id])
+    @rsvp = Rsvp.find(params[:id])
+  end
+
+  def destroy
+    rsvp = Rsvp.find(params[:id])
     rsvp.active = false
-    rsvp.save
+    if rsvp.save
+        RsvpMailer.cancel_confirm_email(rsvp).deliver_later
+        @message = "You're no longer attending #{rsvp.event.subject}, thanks for keeping us updated."
+    end
+    render :template => 'homepage/index'
   end
 
   private

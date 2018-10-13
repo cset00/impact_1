@@ -4,17 +4,15 @@
   <%= f.input :first_name, label: 'First name', error: 'Please enter your first name' %>
   <%= f.input :last_name, label: 'Last name', error: 'Please enter your last name' %>
   <%= f.input :email, label: 'Enter your email address' %>
-  <form action="">
-    <input type="checkbox" name="" value="" id="sixteen">
-    <label> I am 16 years or under</label>
-  </form>
-  
+
+  <input type="checkbox" name="" value="" id="sixteen">
+  <label> I am 16 years or under</label>
+
   <div class="student hidden" >
     <%= f.input :school, label: 'What school do you go to?' %>
     <%= f.input :suburb, label: 'Enter your school\'s suburb' %>
   </div>
   <%= f.input :contact_num, label: 'Best contact number' %>
-  
   <%= f.button :submit %>
 
 <% end %>
