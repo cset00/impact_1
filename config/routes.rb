@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   resources :events
   post '/events/:id/cancel', to: 'events#cancel'
+  get  '/events/:id/adhoc_registration', to: 'events#adhoc_registration'
+  post '/events/:id/adhoc_register', to: 'events#adhoc_register'
   
   resources :rsvps, only: [:destroy, :create, :new]
   get   '/rsvps/:id/cancel', to: 'rsvps#cancel'
