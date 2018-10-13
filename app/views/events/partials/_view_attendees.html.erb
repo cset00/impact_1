@@ -1,0 +1,24 @@
+<h2> Attendees </h2>
+
+<div>
+  <a href="#">View registered volunteers who didn't RSVP</a>
+</div>
+
+<div>
+  <a href="#">New volunteer registration</a>
+</div>
+
+<div class="attendees">
+  <% @event.rsvps.each do |rsvp| %>
+    <%= rsvp.reg_user.first_name %>
+    <%= rsvp.reg_user.email %>
+    <%= rsvp.reg_user.contact_num %>
+  
+    
+    <input type="checkbox" value="Attending">
+    <label for="">Mark as attending</label>
+
+    <% end %>
+</div>
+
+
