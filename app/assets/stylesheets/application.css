@@ -32,3 +32,49 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+/*styles for header*/
+
+.app-image {
+	text-align: center;
+}
+
+.app-image img {
+	width: 30%;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+nav li {
+	padding: 10px;
+}
+
+a {
+	color: black
+}
+
+nav li {
+	font-size: 2em;
+}
+
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+	.app-image img {
+		width: 50%;
+	}
+
+	nav li {
+		font-size: 3em;
+	}
+}
+
+
