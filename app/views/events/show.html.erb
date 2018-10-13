@@ -12,6 +12,7 @@
 <h4> Created By:</h4>
 <%= @event.admin_user.full_name if @event.admin_user.present? %>
 
+<%= link_to "edit", edit_event_path(@event.id) %>
 
 <%= form_tag "/events/#{@event.id}", method: 'delete' do %>
   <button class="submit-btn">Delete</button>

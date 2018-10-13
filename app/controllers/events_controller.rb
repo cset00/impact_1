@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     # redirect if logged_in?
     @event = Event.new(create_params)
     @event.active = true
-    @event.active = false
+    @event.cancelled = false
     if @event.save
         redirect_to events_path
     else
@@ -32,7 +32,11 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.update_attributes(create_params)
-    @event.save
+    if @event.save
+        redirect_to event_path(@event.id)
+    else
+        render :edit
+    end
     #add redirect
   end
 
@@ -41,6 +45,7 @@ class EventsController < ApplicationController
     event = Event.find(params[:id])
     event.active = false
     event.save
+    redirect_to events_path
     #add redirect
   end
 
