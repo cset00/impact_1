@@ -64,7 +64,12 @@ p.rego {
 	text-align: center;
 	padding: 0.8em;
 	border-radius: 5px;
-	margin: 5px;
+    margin: 5px;
+    width: 35%;
+}
+
+#sixteen {
+    width: 5%
 }
 
 @media only screen 

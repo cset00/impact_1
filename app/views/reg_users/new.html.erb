@@ -3,19 +3,19 @@
   <p class="rego">We love welcoming new volunteers! <br>Register here for info on our events.</p>
 
   <%= simple_form_for @reg_user, :method => 'post' do |f| %>
-    <%= f.input :first_name, label: 'First name', error: 'Please enter your first name' %>
-    <%= f.input :last_name, label: 'Last name', error: 'Please enter your last name' %>
-    <%= f.input :email, label: 'Enter your email address' %>
+    <%= f.input :first_name, label: false, error: 'Please enter your first name' %>
+    <%= f.input :last_name, label: false, error: 'Please enter your last name' %>
+    <%= f.input :email, label: false %>
 
     <input type="checkbox" name="" value="" id="sixteen">
     <label> I am 16 years or under</label>
 
     <div class="student hidden" >
-      <%= f.input :school, label: 'What school do you go to?' %>
-      <%= f.input :suburb, label: 'Enter your school\'s suburb' %>
+      <%= f.input :school, label: false %>
+      <%= f.input :suburb, label: false %>
     </div>
-    <%= f.input :contact_num, label: 'Best contact number' %>
-    <%= f.button :submit %>
+    <%= f.input :contact_num, label: false %>
+    <%= f.button :submit, "Register to recevie emails" %>
 
   <% end %>
 </div>
