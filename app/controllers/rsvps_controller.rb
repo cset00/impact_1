@@ -9,6 +9,8 @@ class RsvpsController < ApplicationController
 
   def new
     @rsvp = Rsvp.new
+    @event = Event.find(params[:event_id])
+    @reg_user = RegUser.find(params[:reg_user_id])
   end
 
   def create
