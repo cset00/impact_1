@@ -13,13 +13,6 @@ class AdminUsersController < ApplicationController
   end
   
   def create
-
-
-    if !!current_user 
-      redirect_to '/events'
-    else
-      redirect_to '/login'
-    end
  
   end
 
