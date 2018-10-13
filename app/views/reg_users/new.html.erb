@@ -18,6 +18,11 @@
     <%= f.button :submit, "Register to receive emails", :class => "reg-button" %>
 
   <% end %>
+
+  <% if  session[:admin_user_id] %>
+    <a href="/reg_users">See list of all registered volunteers.</a>
+  <% end %>
+  
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
