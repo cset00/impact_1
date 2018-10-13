@@ -1,4 +1,11 @@
 <h1> RSVP to <%= @event.subject %> </h1>
 <h2> Hi <%=@reg_user.first_name%>, will you be attending <%= @event.subject %> on <%= @event.date_time %>?  </h2>
 
-<p> Yes, I am attending </p>
+<%= @reg_user.id %>
+<%= @event.id %>
+<%= simple_form_for @rsvp, :method => 'post' do |f| %>
+    <%=f.hidden_field :reg_user_id, :value => @reg_user.id %>
+    <%=f.hidden_field :event_id, :value => @event.id %>
+    <%= f.button :submit, "Yes, I'm attending!" %>
+<% end %>
+

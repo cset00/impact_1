@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_13_005921) do
+ActiveRecord::Schema.define(version: 2018_10_13_082104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,5 +50,18 @@ ActiveRecord::Schema.define(version: 2018_10_13_005921) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "rsvps", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "reg_user_id"
+    t.boolean "active"
+    t.boolean "attended"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_rsvps_on_event_id"
+    t.index ["reg_user_id"], name: "index_rsvps_on_reg_user_id"
+  end
+
   add_foreign_key "events", "admin_users"
+  add_foreign_key "rsvps", "events"
+  add_foreign_key "rsvps", "reg_users"
 end

@@ -1,13 +1,13 @@
 <%= link_to "new event", new_event_path %>
 
-<table>
-    <th>
-        <td>Date</td>
-        <td>Time</td>
-        <td>Subject</td>
-        <td>Location</td>
-        <td colspan=4></td>
-    </th>
+<table class="reg-table">
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Subject</th>
+        <th>Location</th>
+        <th colspan=4></th>
+    </tr>
     <% @events.each do |event| %>
     <tr>
         <td><%= event.date_time.strftime("%d/%m/%Y") %></td>

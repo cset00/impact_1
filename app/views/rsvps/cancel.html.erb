@@ -1,0 +1,8 @@
+<h1> Cancel your RSVP to <%= @rsvp.event.subject %> </h1>
+<h2> Hi <%=@rsvp.reg_user.first_name%>, would you like to cancel your RSVP to <%= @rsvp.event.subject %> on <%= @rsvp.event.dt %>? </h2>
+
+<%= @rsvp.reg_user.id %>
+<%= @rsvp.event.id %>
+<%= simple_form_for @rsvp, :method => 'delete' do |f| %>
+    <%= f.button :submit, "Yes, I'm unable to attend!" %>
+<% end %>
