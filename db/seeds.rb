@@ -9,15 +9,18 @@
 RegUser.destroy_all
 Event.destroy_all
 AdminUser.destroy_all
+Rsvp.destroy_all
 
-harry = RegUser.create(first_name: "Harry", last_name: "Potter", email: "h@h.com", school: "Hogwarts", suburb: "Hogsmeade", active_sub: true, contact_num: "111")
+harry = RegUser.create(first_name: "Harry", last_name: "Potter", email: "harry@leaheramo.tech", school: "Hogwarts", suburb: "Hogsmeade", active_sub: true, contact_num: "111")
 
-hermoine = RegUser.create(first_name: "Hermione", last_name: "Granger", email: "her@her.com", school: "Hogwarts", suburb: "Hogsmeade", active_sub: true, contact_num: "222")
+hermoine = RegUser.create(first_name: "Hermione", last_name: "Granger", email: "hermione@leaheramo.tech", school: "Hogwarts", suburb: "Hogsmeade", active_sub: true, contact_num: "222")
 
-ron = RegUser.create(first_name: "Ron", last_name: "Weasley", email: "r@r.com", school: "Hogwarts", suburb: "Hogsmeade", active_sub: true, contact_num: "333")
+ron = RegUser.create(first_name: "Ron", last_name: "Weasley", email: "ron@leaheramo.tech", school: "Hogwarts", suburb: "Hogsmeade", active_sub: true, contact_num: "333")
 
 admin = AdminUser.create(firstname: 'Kathy', lastname: 'Admin', email: "admin@email.com" , pass_digest: 'pudding')
 
-event1 = Event.create(subject: "Christmas 2018" , description: "Help us put together bags of love for women and children in need this Christmas" , address: "Glen Eira College Sports Hall",  date_time: DateTime.new(2018, 12,1))
+event1 = Event.create(active: true, subject: "Christmas 2018" , description: "Help us put together bags of love for women and children in need this Christmas" , address: "Glen Eira College Sports Hall",  date_time: DateTime.new(2018, 12,1))
 
-event2 = Event.create(subject: "Mum's day 2018" , description: "Help us put together bags of love for mums and children in need this Mum's day" , address: "Glen Eira College Sports Hall",  date_time: DateTime.new(2018, 5, 13))
+event2 = Event.create(active: true, subject: "Mum's day 2018" , description: "Help us put together bags of love for mums and children in need this Mum's day" , address: "Glen Eira College Sports Hall",  date_time: DateTime.new(2018, 5, 13))
+
+rsvp1 = Rsvp.create(reg_user: RegUser.first, event: Event.first, active: true)
