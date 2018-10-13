@@ -6,6 +6,8 @@
 	cursor: pointer;
 }
 
+/*homepage styles*/
+
 h1.homepage  {
 	color: #FC0D1B;
 	text-transform: uppercase;
@@ -41,6 +43,28 @@ span.homepage {
 	color: #FC0D1B;
 	border: 1px solid #FC0D1B;
 	background-color: white;
+}
+
+/*rego styles*/
+p.rego {
+	width: 50%;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.rego-wrapper {
+	font-size: 1.5em;
+}
+
+.rego-wrapper form {
+	text-align: center;
+}
+
+.rego-wrapper input {
+	text-align: center;
+	padding: 0.8em;
+	border-radius: 5px;
+	margin: 5px;
 }
 
 @media only screen 
