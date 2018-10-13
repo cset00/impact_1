@@ -1,28 +1,28 @@
 <h2 class="event-h2"> Attendees <span>(<%= @event.rsvps.length %>)</span></h2>
 
-
-<div class="no-rsvp-btn">
-  <a href="#">View registered volunteers who didn't RSVP</a>
+<div class="btn-containers">
+  <button class="reg-button rsvp-reg-btn no-rsvp-btn">View registered volunteers who didn't RSVP</button>
+  <button class="reg-button rsvp-reg-btn">Register and RSVP new volunteers</button>
 </div>
 
 <div class="att-flex">
+  
+  <% @event.rsvps.each do |rsvp| %>
   <div class="attendees">
-    <% @event.rsvps.each do |rsvp| %>
-      <div class="attendees-left">
-        <p class="event-p"><%= rsvp.reg_user.first_name %></p>
-        <p class="event-p"><%= rsvp.reg_user.email %></p>
-        <p class="event-p"><%= rsvp.reg_user.contact_num %></p>
-      </div>
-      
-      <div class="attendees-right">
-        <label class="container-cbox" for="">Attending?
-          <input class ="att-checkbox" type="checkbox" value="Attending">
-          <span class="checkmark"></span>
-        </label>
-      </div>
-
-      <% end %>
+    <div class="attendees-left">
+      <p class="event-p"><%= rsvp.reg_user.first_name %></p>
+      <p class="event-p"><%= rsvp.reg_user.email %></p>
+      <p class="event-p"><%= rsvp.reg_user.contact_num %></p>
+    </div>
+    
+    <div class="attendees-right">
+      <label class="container-cbox" for="">Attending?
+        <input class ="att-checkbox" type="checkbox" value="Attending">
+        <span class="checkmark"></span>
+      </label>
+    </div>
   </div>
+  <% end %>
 
   <div class="attendees">
     <div class="attendees-left">

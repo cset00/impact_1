@@ -26,11 +26,9 @@
   margin: 15px 0 5px 0;
   padding: 0;
   display: inline;
+  font-weight: 800;
 }
 
-.no-rsvp-btn {
-  margin-bottom: 30px;
-}
 
 .attendees {
   // border: 1px solid #FC0D1B;
@@ -125,5 +123,20 @@
 .att-checkbox {
   padding: 10px;
 }
+
+.rsvp-reg-btn {
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.btn-containers {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+// .no-rsvp-btn {
+//   margin-bottom: 30px;
+// }
 
 
