@@ -12,9 +12,15 @@
     <p>
         Thank you for signing to be a volunteer for impact! Every volunteer helps us to make a difference.
     </p>
-    <p>    
-        Click the link below to view events coming up.
-        We will also email you future events that you can register to attend
+    <p>We have a new event comming up</p>
+    <p>
+        <%= @event.subject %> - <%= @event.date_time.strftime("%d/%m/%Y %l:%M %P") %>
+    </p>
+    <p>
+        Location - <%= @event.address %>
+    </p>
+    <p>
+        <%= @event.description %>
     </p>
     <button>
         http://events.impact.org.au?uid=1002349eventid=10003434
