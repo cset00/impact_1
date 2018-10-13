@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :reg_users, only: [:index, :show, :new]
   get '/login', to:'admin_users#login'
+  get '/signup', to:'admin_users#new'
 
   resources :events
   post '/events/:id/cancel', to: 'events#cancel'
