@@ -1,25 +1,26 @@
 <h1>Event Details: <%= @event.subject %></h1>
+<div class="event-details">
+  <h4 class="event-h4">Date and Time</h4>
+  <%= @event.dt %>
 
-<h4>Date and Time</h4>
-<%= @event.dt %>
+  <h4 class="event-h4">Address</h4>
+  <%= @event.address %>
 
-<h4>Address</h4>
-<%= @event.address %>
+  <h4 class="event-h4">Description</h4>
+  <%= @event.description %>
 
-<h4>Description</h4>
-<%= @event.description %>
+  <h4 class="event-h4"> Created By:</h4>
+  <%= @event.admin_user.full_name if @event.admin_user.present? %>
 
-<h4> Created By:</h4>
-<%= @event.admin_user.full_name if @event.admin_user.present? %>
+  <%= link_to "edit", edit_event_path(@event.id) %>
 
-<%= link_to "edit", edit_event_path(@event.id) %>
+  <%= form_tag "/events/#{@event.id}", method: 'delete' do %>
+    <button class="submit-btn">Delete</button>
+  <% end %> 
 
-<%= form_tag "/events/#{@event.id}", method: 'delete' do %>
-  <button class="submit-btn">Delete</button>
-<% end %> 
-
-<%= form_tag "/events/#{@event.id}/cancel", method: 'post' do %>
-  <button class="submit-btn">Cancel</button>
-<% end %> 
+  <%= form_tag "/events/#{@event.id}/cancel", method: 'post' do %>
+    <button class="submit-btn">Cancel</button>
+  <% end %> 
+</div>
 
 <%= render "events/partials/view_attendees" %>
