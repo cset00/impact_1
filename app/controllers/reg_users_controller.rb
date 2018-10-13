@@ -14,6 +14,7 @@ class RegUsersController < ApplicationController
 
 	def create
 		@reg_user = RegUser.new(create_params)
+		@reg_user.active_sub = true
     	if @reg_user.save 
     		redirect_to '/'
     	end
