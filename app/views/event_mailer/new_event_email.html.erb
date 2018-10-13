@@ -6,7 +6,9 @@
   <body>
 
     <header>
-        <div>placeholder for a logo</div>
+        <div>
+            <%= image_tag attachments['impact-red-logo.svg'].url %>
+        </div>
     </header>
     <h1>Thanks for your on-going support, <%= @reg_user.first_name %></h1>
     <p>
