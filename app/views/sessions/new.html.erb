@@ -1,17 +1,18 @@
-<div class="login-title">
-  <h1 class="h1-login">login</h1>
-</div>
+<div class="rego-wrapper">
+  <p class="rego">Welcome back Admin</p>
 
-<div class="box-container">
+
+
 
   <%= form_for(:session, url: sessions_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
+    <div>
+   
+      <%= f.email_field :email, placeholder:'email' %>
+    </div>
+    <div>
+  
+      <%= f.password_field :password,placeholder:'password' %>
+    </div>
       <%= f.submit "Log in" %>
     <% end %>
 </div>
