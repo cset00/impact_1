@@ -1,11 +1,12 @@
-class EventMailer < ActionMailer::Base
+class EventMailer < ApplicationMailer
     default from: 'no-reply@impactforwomen.org.au'
     layout 'mailer'
 
     def new_event_email(event, reg_user)
         @event = event
         @reg_user = reg_user
-        attachments.inline['impact-red-logo.svg'] = File.read(Rails.root.join("public/impact-red-logo.svg"))
+        attachments.inline['impact-red-logo.svg'] = logo_att
+        attachments.inline['help.svg'] = help_att
         mail(to: @reg_user.email , subject: 'New upcomming event!')
     end
 end
