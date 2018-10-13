@@ -1,5 +1,5 @@
 class Rsvp < ApplicationRecord
-  has_many :events 
-  has_many :reg_users
+  belongs_to :event
+  belongs_to :reg_user
   
 end
