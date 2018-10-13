@@ -21,3 +21,5 @@
 <%= form_tag "/events/#{@event.id}/cancel", method: 'post' do %>
   <button class="submit-btn">Cancel</button>
 <% end %> 
+
+<%= render "events/partials/view_attendees" %>
