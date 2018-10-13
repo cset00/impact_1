@@ -5,9 +5,8 @@
   </head>
   <body>
 
-    <div>
-        <%= image_tag attachments['impact-red-logo.svg'].url %>
-    </div>
+    <%= render "email_partials/html_header" %>
+
     <h1>Hi <%= @rsvp.reg_user.first_name %>,</h1>
     <p>
        Thank you for signing to be a part of our event! Every volunteer helps us to make a difference.
@@ -37,10 +36,8 @@
         <%= "#{ENV['HOST']}/rsvps/#{@rsvp.id}/cancel" %>
     </div>
     <small>(or copy and paste the link into your browser).</small>
-    <div>
-        <h1>Need help?</h1>
-        <p>If you require any assistance, or have any questions, please contact: help@imact.org.au</p>
-    </div>
+    
+    <%= render 'email_partials/html_help_section' %>
 
     <p>
         Best regards,
@@ -49,10 +46,7 @@
         The Impact Team
     </p>
 
-    <div>
-        <span>&copy; 2018 Copyright Impact  - Terms and Conditions - Privacy Policy</span>
-        <span>Unsubscribe</span>
-    </div>
+    <%= render 'email_partials/html_copyr_footer' %>
 
   </body>
 </html>

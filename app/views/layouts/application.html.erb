@@ -7,9 +7,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
   </head>
 
   <body>
+    <header>
+        <div class="app-image">
+            <%= image_tag "/impact-red-logo.svg" %>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <%= link_to 'Home', '/' %>
+                </li>
+                <li>
+                    <%= link_to 'Events', events_path %>
+                </li>
+                <li>
+                    <%= link_to 'Register', new_reg_user_path %>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

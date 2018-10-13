@@ -5,3 +5,78 @@
 .pointer {
 	cursor: pointer;
 }
+
+/*homepage styles*/
+
+h1.homepage  {
+	color: #FC0D1B;
+	text-transform: uppercase;
+	letter-spacing: 0.4em;
+}
+
+.homepage-wrapper {
+	text-align: center;
+}
+
+.homepage-wrapper p {
+	width: 50%;
+	margin: 30px auto;
+}
+
+.highlight {
+	font-size: 1.5em;
+}
+
+span.homepage {
+	font-weight: bold;
+}
+
+.reg-button {
+	text-decoration: none;
+	padding: 1em;
+	background-color: #FC0D1B;
+	border-radius: 5px;
+	color: white;
+}
+
+.reg-button:hover {
+	color: #FC0D1B;
+	border: 1px solid #FC0D1B;
+	background-color: white;
+}
+
+/*rego styles*/
+p.rego {
+	width: 50%;
+	margin: 30px auto;
+	text-align: center;
+}
+
+.rego-wrapper {
+	font-size: 1.5em;
+}
+
+.rego-wrapper form {
+	text-align: center;
+}
+
+.rego-wrapper input {
+	text-align: center;
+	padding: 0.8em;
+	border-radius: 5px;
+	margin: 5px;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+	.homepage-wrapper {
+		font-size: 2em;
+	}
+
+	.homepage-wrapper p {
+		width: 80%;
+	}
+}
+
