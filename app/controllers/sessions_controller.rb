@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
   def create
     admin_user = AdminUser.find_by(email: params[:session][:email].downcase)
     if admin_user && admin_user.authenticate(params[:session][:password])
-      session[:admin_user_id] = admin_user.admin_user_id
-      redirect_to '/events'
+      session[:admin_user_id] = admin_user.id
+      redirect_to '/'
     else
       flash[:notice] = 'Invalid email/password combination'
       redirect_to '/sessions/new'

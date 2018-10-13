@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :reg_users, only: [:index, :show, :new, :create]
   
   resources :admin_users, only: [:index, :show, :new, :create]
-  get '/login', to:'admin_users#login'
-  post '/login', to:'events#index'
+  get '/login', to:'admin_users#new'
+  post '/login', to:'admin_users#new'
 
   get    '/sessions/new',   to: 'sessions#new'
   post   '/sessions',   to: 'sessions#create'

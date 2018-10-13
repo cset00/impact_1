@@ -15,7 +15,7 @@ class AdminUsersController < ApplicationController
   def create
 
 
-    if !!current_user 
+    if logged_in?
       redirect_to '/events'
     else
       redirect_to '/login'
