@@ -7,9 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 RegUser.destroy_all
+Event.destroy_all
+AdminUser.destroy_all
 
 harry = RegUser.create(first_name: "Harry", last_name: "Potter", email: "h@h.com", school: "Hogwarts", suburb: "Hogsmeade", active_sub: true, contact_num: "111")
 
 hermoine = RegUser.create(first_name: "Hermione", last_name: "Granger", email: "her@her.com", school: "Hogwarts", suburb: "Hogsmeade", active_sub: true, contact_num: "222")
 
 ron = RegUser.create(first_name: "Ron", last_name: "Weasley", email: "r@r.com", school: "Hogwarts", suburb: "Hogsmeade", active_sub: true, contact_num: "333")
+
+admin = AdminUser.create(firstname: 'Kathy', lastname: 'Admin', email: "admin@email.com" , pass_digest: 'pudding')
+
+
