@@ -1,7 +1,7 @@
 <h1>Event Details: <%= @event.subject %></h1>
 
 <h4>Date and Time</h4>
-<%= @event.date_time.strftime("%d%m%Y %l:%M %P") %>
+<%= @event.date_time.strftime("%d/%m/%Y %l:%M %P") %>
 
 <h4>Address</h4>
 <%= @event.address %>
@@ -10,4 +10,8 @@
 <%= @event.description %>
 
 <h4> Created By:</h4>
-<%= @event.admin_user.full_name %>
+<%= @event.admin_user.full_name if @event.admin_user.present? %> <% # delete the condition when userlogin implemented %>
+
+            <%= form_tag "/events/#{event.id}", method: 'delete' do %>
+                <button class="submit-btn">Delete</button>
+            <% end %> 
