@@ -1,15 +1,16 @@
-class AdminsController < ApplicationController
+class AdminUsersController < ApplicationController
     
   def login
+    @admin = AdminUser.new
     render :login
   end
 
   def signup
-      render :signup
+    render :signup
   end
 
   def session
-    admin = Admin.find_by(email: params[:email])
+    admin = AdminUsers.find_by(email: params[:email])
     if admin && admin.authenticate(params[:passoword])
         session[:admin_id] = admin.id
         redirect_to '/events'
