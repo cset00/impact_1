@@ -46,7 +46,7 @@
         The Impact Team
     </p>
 
-    <%= render 'email_partials/html_copyr_footer' %>
+    <%= render 'email_partials/html_copyr_footer', :uid => @rsvp.reg_user.id %>
 
   </body>
 </html>

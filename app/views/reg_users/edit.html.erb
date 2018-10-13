@@ -1,0 +1,16 @@
+<div class="rego-wrapper">
+
+  <%= simple_form_for @reg_user, :method => 'put' do |f| %>
+    <%= f.input :first_name, label: false, error: 'Please enter first name' %>
+    <%= f.input :last_name, label: false, error: 'Please enter last name' %>
+    <%= f.input :email, label: false %>
+
+    <div class="student" >
+      <%= f.input :school, label: false %>
+      <%= f.input :suburb, label: false %>
+    </div>
+    <%= f.input :contact_num, label: false %>
+    <%= f.button :submit, "Save" %>
+
+  <% end %>
+</div>

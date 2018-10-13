@@ -1,0 +1,9 @@
+<h1>You are about to unsubscribe from our emails...</h1>
+
+<p>
+    We hate to see you go <%= @reg_user.first_name %>, but if you would like to take a break from receiving our emails click the link below.
+</p>
+
+<%= form_tag "/reg_users/#{@reg_user.id}/unsub", method: 'put' do %>
+    <button class="submit-btn">unsubscribe</button>
+<% end %> 
