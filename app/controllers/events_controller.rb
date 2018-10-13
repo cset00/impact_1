@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate!, except: [:show, :index ]
 
   def index
     @events = Event.where(active: true)
