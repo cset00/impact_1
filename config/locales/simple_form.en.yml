@@ -17,7 +17,7 @@ en:
         last_name: 'Last Name'
         email: 'Email Address'
         school: 'School Name'
-        suburb: 'Schools Suburb'
+        suburb: 'School Suburb'
         contact_num: 'Best Contact Number'
       event:
         address: 'Enter address'
