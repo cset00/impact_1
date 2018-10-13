@@ -13,15 +13,14 @@ class AdminUsersController < ApplicationController
   end
   
   def create
-    @admin_user = AdminUser.new
-    @admin_user.email = params[:email]
 
-    if @admin_user.save
-      session[:admin_id] = @admin_user.id
+
+    if !!current_user 
       redirect_to '/events'
     else
-      render :new
+      redirect_to '/login'
     end
+ 
   end
 
   private

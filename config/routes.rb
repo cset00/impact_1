@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   get '/login', to:'admin_users#login'
   post '/login', to:'events#index'
 
+  get    '/sessions/new',   to: 'sessions#new'
+  post   '/sessions',   to: 'sessions#create'
+  delete '/sessions',  to: 'sessions#destroy'
+
   resources :events
   post '/events/:id/cancel', to: 'events#cancel'
   
-
 
 end
