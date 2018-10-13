@@ -2,9 +2,20 @@
   text-align: center;
 }
 
+.user-details{
+  display: inline-block; 
+  text-align: left;
+  width: 30%;
+}
+
 .user-edit-sub li {
   list-style: none;
   margin: 30px auto;
+  padding: 0;
+}
+
+ul.user-edit-sub {
+  padding-left: 0;
 }
 
 @media only screen 
