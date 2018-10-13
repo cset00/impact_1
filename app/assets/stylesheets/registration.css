@@ -77,16 +77,19 @@ p.rego {
 
 /*styling for event create*/
 
-.event-new {
+.event-new,
+.event-edit {
 	text-align: center;
 }
 
-.event-new form {
+.event-new form, 
+.event-edit form {
 	text-align: center;
 	font-size: 1.5em;
 }
 
-.event-new input {
+.event-new input,
+.event-edit input {
 	text-align: center;
 	padding: 0.4em;
 	border-radius: 5px;
@@ -112,6 +115,8 @@ p.rego {
 	font-size: 0.8em;
 	margin-bottom: 10px;
 }
+
+/*styling for event edit*/
 
 @media only screen 
   and (min-device-width: 375px) 
