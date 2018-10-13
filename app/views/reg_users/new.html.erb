@@ -1,9 +1,21 @@
 <p>We love welcoming new volunteers, register here to see and join all our events:</p>
 
-<div class="container">
+<%= simple_form_for @reg_user, :method => 'post' do |f| %>
+  <%= f.input :first_name, label: 'First name', error: 'Please enter your first name' %>
+  <%= f.input :last_name, label: 'Last name', error: 'Please enter your last name' %>
+  <%= f.input :email, label: 'Enter your email address' %>
+  <%= f.input :school, label: 'What school do you go to?' %>
+  <%= f.input :suburb, label: 'Enter your school\'s suburb' %>
+  <%= f.input :contact_num, label: 'Best contact number' %>
+  
+  <%= f.button :submit %>
+
+<% end %>
+
+<!-- <div class="container">
 
  <div class="reg-form">
-   <%= form_tag "/reg_users", method: 'post' do %>
+   <%#= form_tag "/reg_users", method: 'post' do %>
   
      <p>
        <label for="">'First name'</label>
@@ -34,7 +46,7 @@
        <input class="number" type="number" name="contact_num">
      </p>
        <button class="reg-button">Register</button>
-   <% end %>
+   <#% end %>
  </div>
 
-</div>
+</div> -->

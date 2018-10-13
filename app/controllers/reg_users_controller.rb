@@ -9,11 +9,12 @@ class RegUsersController < ApplicationController
 	end
 
 	def new
+		@reg_user = RegUser.new
 	end
 
 	def create
-		@user = RegUser.new(create_params)
-    	@user.save
+		@reg_user = RegUser.new(create_params)
+    	@reg_user.save
 	end
 
 	  private
