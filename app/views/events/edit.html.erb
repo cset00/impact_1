@@ -1,1 +1,7 @@
-<%= render 'events/form' %>
+<%= simple_form_for @event,  :method => 'put' do |f| %>
+    <%= f.input :date_time, label: 'Your username please', error: 'Date and time mandatory, please make sure you enter them.' %>
+    <%= f.input :address %>
+    <%= f.input :subject %>
+    <%= f.input :description, inline_label: 'This will appear on the email' %>
+    <%= f.button :submit %>
+<% end %>

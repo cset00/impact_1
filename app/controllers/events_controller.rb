@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Events.all
+    @events = Event.where(active: true)
   end
 
   def show
-    @event = Events.find(params[:id])
+    @event = Event.find(params[:id])
   end
 
   def new
@@ -16,7 +16,13 @@ class EventsController < ApplicationController
   def create
     # redirect if logged_in?
     @event = Event.new(create_params)
-    @event.save
+    @event.active = true
+    @event.cancelled = false
+    if @event.save
+        redirect_to events_path
+    else
+        render :new
+    end
   end
 
   def edit
@@ -26,7 +32,11 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.update_attributes(create_params)
-    @event.save
+    if @event.save
+        redirect_to event_path(@event.id)
+    else
+        render :edit
+    end
     #add redirect
   end
 
@@ -35,6 +45,7 @@ class EventsController < ApplicationController
     event = Event.find(params[:id])
     event.active = false
     event.save
+    redirect_to events_path
     #add redirect
   end
 
@@ -48,6 +59,6 @@ class EventsController < ApplicationController
   private
   
   def create_params
-    params.require(:event).permit(:date_timeaddress, :subject, :description)
+    params.require(:event).permit(:date_time, :address, :subject, :description)
   end
 end
