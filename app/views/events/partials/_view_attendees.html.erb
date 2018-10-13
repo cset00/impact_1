@@ -2,7 +2,7 @@
 
 <div class="btn-containers">
   <a href="" class="reg-button rsvp-reg-btn no-rsvp-btn">View registered volunteers who didn't RSVP</a>
-  <a href="/events/:id/adhoc_register" class="reg-button rsvp-reg-btn">Register and RSVP new volunteers</a>
+  <a href="/events/<%= @event.id %>/adhoc_registration" class="reg-button rsvp-reg-btn">Register and RSVP new volunteers</a>
 </div>
 
 <div class="att-flex">
@@ -78,6 +78,7 @@
   attendeesContainer.addEventListener('click',function(e){
     if (e.target.className.includes('attendees')){
       console.log('clicked!')
+      
     }
     
     
