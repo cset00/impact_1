@@ -18,4 +18,6 @@ ron = RegUser.create(first_name: "Ron", last_name: "Weasley", email: "r@r.com", 
 
 admin = AdminUser.create(firstname: 'Kathy', lastname: 'Admin', email: "admin@email.com" , pass_digest: 'pudding')
 
+event1 = Event.create(subject: "Christmas 2018" , description: "Help us put together bags of love for women and children in need this Christmas" , address: "Glen Eira College Sports Hall",  date_time: DateTime.new(2018, 12,1))
 
+event2 = Event.create(subject: "Mum's day 2018" , description: "Help us put together bags of love for mums and children in need this Mum's day" , address: "Glen Eira College Sports Hall",  date_time: DateTime.new(2018, 5, 13))
