@@ -29,6 +29,20 @@ span.homepage {
 	font-weight: bold;
 }
 
+.reg-button {
+	text-decoration: none;
+	padding: 1em;
+	background-color: #FC0D1B;
+	border-radius: 5px;
+	color: white;
+}
+
+.reg-button:hover {
+	color: #FC0D1B;
+	border: 1px solid #FC0D1B;
+	background-color: white;
+}
+
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
