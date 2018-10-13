@@ -1,0 +1,22 @@
+.user-wrapper{
+  text-align: center;
+}
+
+.user-edit-sub li {
+  list-style: none;
+  margin: 30px auto;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+	.user-wrapper {
+		font-size: 2em;
+	}
+
+	.user-wrapper p {
+		width: 80%;
+	}
+}
+
