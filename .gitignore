@@ -29,3 +29,6 @@
 # Ignore files that will cause conflict
 /db/schema.rb
 .idea
+
+# Ignore application configuration
+/config/application.yml
