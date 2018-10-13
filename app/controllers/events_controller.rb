@@ -16,7 +16,13 @@ class EventsController < ApplicationController
   def create
     # redirect if logged_in?
     @event = Event.new(create_params)
-    @event.save
+    @event.active = true
+    @event.active = false
+    if @event.save
+        redirect_to events_path
+    else
+        render :new
+    end
   end
 
   def edit
