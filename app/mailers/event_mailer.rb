@@ -5,7 +5,7 @@ class EventMailer < ActionMailer::Base
     def new_event_email(event, reg_user)
         @event = event
         @reg_user = reg_user
-        mail(to: "leah_eramo@hotmail.com", subject: 'New upcomming event!')
+        mail(to: "leah.eramo@gmail.com", subject: 'New upcomming event!')
     end
 end
 
