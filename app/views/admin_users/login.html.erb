@@ -1,15 +1,16 @@
 <div class="login-title">
-    <h1 class="h1-login">login</h1>
+  <h1 class="h1-login">login</h1>
 </div>
 
 <div class="box-container">
-    <%= form_tag "/login", method: 'post' do %>
-        <label class="form-label"for="">email </label>
-        <input class="input-box" type="text" name="email">
+  <%= form_tag "/login", method: 'post' do %>
+    <label class="form-label"for="">email </label>
+    <input class="input-box" type="text" name="email">
 
-        <label class="form-label" for="">password</label>
-        <input class="input-box" type="password" name="password">
+    <label class="form-label" for="">password</label>
+    <input class="input-box" type="password" name="password">
 
-        <button class="submit-btn">login</button>
-    <% end %> 
+    <button class="submit-btn">login</button>
+  <% end %> 
 </div>
+

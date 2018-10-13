@@ -1,4 +1,5 @@
 class AdminUsersController < ApplicationController
+
   attr_accessor :id, :name
 
   def index
@@ -13,4 +14,5 @@ class AdminUsersController < ApplicationController
       @admin_users = AdminUser.all
       render :login
 	end
- end
+end
+
