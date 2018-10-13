@@ -1,0 +1,35 @@
+
+<div class="rego-wrapper">
+  <p class="rego">Register a new user as attending <%= @event.subject %></p>
+
+  <%= simple_form_for @reg_user, :url => url_for(:action => 'adhoc_register', :controller => 'events'), :method => 'post' do |f| %>
+
+    <%= f.input :first_name, label: false, error: 'Please enter your first name' %>
+    <%= f.input :last_name, label: false, error: 'Please enter your last name' %>
+    <%= f.input :email, label: false %>
+
+    <input type="checkbox" name="" value="" id="sixteen">
+    <label> I am 16 years or under</label>
+
+    <div class="student hidden" >
+      <%= f.input :school, label: false %>
+      <%= f.input :suburb, label: false %>
+    </div>
+    <%= f.input :contact_num, label: false %>
+    <%= f.button :submit, "Register as attending", :class => "reg-button" %>
+
+  <% end %>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+
+  var studentDiv = document.querySelector(".student")
+  var checkboxStudent = document.querySelector("#sixteen")
+  $(checkboxStudent).on('change', function() {     
+     $(studentDiv).toggleClass('hidden');        
+});
+
+
+
+</script>
