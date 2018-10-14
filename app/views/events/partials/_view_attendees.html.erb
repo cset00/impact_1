@@ -10,7 +10,7 @@
         <% @event.rsvps.each do |rsvp| %>
         <div class="attendees">
           <div class="attendees-left">
-            <p class="event-p"><%= rsvp.reg_user.first_name %></p>
+            <p class="event-p"><%= rsvp.reg_user.first_name %> <%= rsvp.reg_user.last_name %></p>
             <p class="event-p"><%= rsvp.reg_user.email %></p>
             <p class="event-p"><%= rsvp.reg_user.contact_num %></p>
           </div>
