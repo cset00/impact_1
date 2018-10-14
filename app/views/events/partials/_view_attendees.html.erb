@@ -1,84 +1,99 @@
 <h2 class="event-h2"> Attendees <span>(<%= @event.rsvps.length %>)</span></h2>
 
-<div class="btn-containers">
-  <a href="" class="reg-button rsvp-reg-btn no-rsvp-btn">View registered volunteers who didn't RSVP</a>
-  <a href="/events/<%= @event.id %>/adhoc_registration" class="reg-button rsvp-reg-btn">Register and RSVP new volunteers</a>
-</div>
-
-<div class="att-flex">
-  
-  <% @event.rsvps.each do |rsvp| %>
-  <div class="attendees">
-    <div class="attendees-left">
-      <p class="event-p"><%= rsvp.reg_user.first_name %></p>
-      <p class="event-p"><%= rsvp.reg_user.email %></p>
-      <p class="event-p"><%= rsvp.reg_user.contact_num %></p>
-    </div>
-    
-    <div class="attendees-right">
-      <label class="container-cbox" for="">Attending?
-        <input class ="att-checkbox" type="checkbox" value="Attending">
-        <span class="checkmark"></span>
-      </label>
-    </div>
-  </div>
-  <% end %>
-
-  <div class="attendees">
-    <div class="attendees-left">
-      <p class="event-p">Name (this is a dummy)</p>
-      <p class="event-p">email</p>
-      <p class="event-p">contact number</p>
-    </div>
-    
-    <div class="attendees-right">
-      <label class="container-cbox" for="">Attending?
-          <input class ="att-checkbox" type="checkbox" value="Attending">
-          <span class="checkmark"></span>
-        </label>
-    </div>
+<%# if  session[:admin_user_id] %>
+  <div class="btn-containers">
+    <a href="" class="reg-button rsvp-reg-btn no-rsvp-btn">View registered volunteers who didn't RSVP</a>
+    <a href="/events/<%= @event.id %>/adhoc_registration" class="reg-button rsvp-reg-btn">Register and RSVP new volunteers</a>
   </div>
 
-  <div class="attendees">
-    <div class="attendees-left">
-      <p class="event-p">Name (this is a dummy)</p>
-      <p class="event-p">email</p>
-      <p class="event-p">contact number</p>
-    </div>
-    
-    <div class="attendees-right">
-      <label class="container-cbox" for="">Attending?
-          <input class ="att-checkbox" type="checkbox" value="Attending">
-          <span class="checkmark"></span>
-        </label>
-    </div>
+  <div class="att-flex">
+        <% @event.rsvps.each do |rsvp| %>
+        <div class="attendees">
+          <div class="attendees-left">
+            <p class="event-p"><%= rsvp.reg_user.first_name %></p>
+            <p class="event-p"><%= rsvp.reg_user.email %></p>
+            <p class="event-p"><%= rsvp.reg_user.contact_num %></p>
+          </div>
+          
+          
+          <div class="attendees-right">
+            <label class="container-cbox" for=""> <a href="/confirm"> Attending?</a>
+              <input class ="att-checkbox" type="checkbox" value=<%= rsvp.reg_user.email %> >
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+        </div>
+        <% end %>
+
+      <div class="attendees">
+        <div class="attendees-left">
+          <p class="event-p">Name (this is a dummy)</p>
+          <p class="event-p">email</p>
+          <p class="event-p">contact number</p>
+        </div>
+        
+        <div class="attendees-right">
+          <label class="container-cbox" for="">Attending?
+              <input class ="att-checkbox" type="checkbox" value="Attending">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+      </div>
+
+      <div class="attendees">
+        <div class="attendees-left">
+          <p class="event-p">Name (this is a dummy)</p>
+          <p class="event-p">email</p>
+          <p class="event-p">contact number</p>
+        </div>
+        
+        <div class="attendees-right">
+          <label class="container-cbox" for="">Attending?
+              <input class ="att-checkbox" type="checkbox" value="Attending">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+      </div>
+
+      <div class="attendees">
+        <div class="attendees-left">
+          <p class="event-p">Name (this is a dummy)</p>
+          <p class="event-p">email</p>
+          <p class="event-p">contact number</p>
+        </div>
+        
+        <div class="attendees-right">
+          <label class="container-cbox" for="">Attending?
+              <input class ="att-checkbox" type="checkbox" value="Attending">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+
+      </div>
+    </table>
   </div>
 
-  <div class="attendees">
-    <div class="attendees-left">
-      <p class="event-p">Name (this is a dummy)</p>
-      <p class="event-p">email</p>
-      <p class="event-p">contact number</p>
-    </div>
-    
-    <div class="attendees-right">
-      <label class="container-cbox" for="">Attending?
-          <input class ="att-checkbox" type="checkbox" value="Attending">
-          <span class="checkmark"></span>
-        </label>
-    </div>
-  </div>
-</div>
+<%# else %>
+  <%# <p>You can only view attendees if you're logged in as an admin</p> %>
+<%# end %>
+
+
+
 
 <script>
   console.log('caroline test!!')
+  var clicked_email;
 
   var attendeesContainer = document.querySelector('.att-flex')
+  
 
   attendeesContainer.addEventListener('click',function(e){
-    if (e.target.className.includes('attendees')){
-      console.log('clicked!')
-      
+    if (e.target.className.includes('checkmark')){
+     clicked_email = e.target.parentNode.firstChild.nextSibling.value
+
+  
+      // e.target.classList.toggle('color-ch')
     }
     
     
