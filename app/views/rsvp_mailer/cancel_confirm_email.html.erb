@@ -4,7 +4,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-
+    <%= render 'email_partials/email_style' %>
     <%= render "email_partials/html_header" %>
 
     <h1>Hi <%= @rsvp.reg_user.first_name %>,</h1>
@@ -20,7 +20,6 @@
         <%= @rsvp.event.address %>
     </p>
 
-    <%= render 'email_partials/html_help_section' %>
 
     <p>
         Best regards,
@@ -31,5 +30,6 @@
 
     <%= render 'email_partials/html_copyr_footer', :uid => @rsvp.reg_user.id %>
 
+    <%= render 'email_partials/html_help_section' %>
   </body>
 </html>
