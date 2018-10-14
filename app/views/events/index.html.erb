@@ -1,4 +1,8 @@
-
+<%  if  session[:admin_user_id] %>
+    <div class="rego">
+        <%= link_to "Add New Event", new_event_path %>
+    </div>
+<% end %>
 
 <table class="reg-table">
     <tr>
@@ -30,8 +34,3 @@
     <% end %>
 </table>
 
-<%  if  session[:admin_user_id] %>
-    <div class="rego">
-        <%= link_to "Add New Event", new_event_path %>
-    </div>
-<% end %>
