@@ -10,6 +10,17 @@
       <%= f.input :suburb, label: false %>
     </div>
     <%= f.input :contact_num, label: false %>
+    
+    <% if @reg_user.active_sub %>
+      <%= f.check_box :active_sub, :label => 'Unsubscribe', :value => false %>
+      <label for="">Unsubscribe</label>
+    <% else %>
+      <%= f.check_box :active_sub, :label => 'Subscribe', :value => true %>
+      <label for="">Subscribe</label>
+    <% end %>
+
+    <br>
+
     <%= f.button :submit, "Save" %>
 
   <% end %>
