@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   resources :admin_users, only: [:index, :show, :new, :create]
 
 
-  get    '/sessions/new',   to: 'sessions#new'
-  post   '/sessions',   to: 'sessions#create'
+  resources :sessions, only: [:new, :create]
+  delete '/session', to: 'sessions#destroy'
 
   resources :events
   post '/events/:id/cancel', to: 'events#cancel'
+  get  '/events/:id/adhoc_registration', to: 'events#adhoc_registration'
+  post '/events/:id/adhoc_register', to: 'events#adhoc_register'
   
   resources :rsvps, only: [:destroy, :create, :new]
   get   '/rsvps/:id/cancel', to: 'rsvps#cancel'

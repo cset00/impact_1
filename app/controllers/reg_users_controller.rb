@@ -1,7 +1,7 @@
 class RegUsersController < ApplicationController
     before_action :authenticate!, except: [ :unsubscribe, :new, :create ]
 
-	def index
+    def index
 		@reg_users = RegUser.all
 	end
 

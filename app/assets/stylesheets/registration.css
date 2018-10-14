@@ -37,12 +37,14 @@ span.homepage {
 	background-color: #FC0D1B;
 	border-radius: 5px;
 	color: white;
+	font-family: inherit;
 }
 
 .reg-button:hover {
 	color: #FC0D1B;
 	border: 1px solid #FC0D1B;
 	background-color: white;
+	cursor: pointer;
 }
 
 /*rego styles*/
@@ -54,6 +56,7 @@ p.rego {
 
 .rego-wrapper {
 	font-size: 1.5em;
+	text-align: center;
 }
 
 .rego-wrapper form {
@@ -62,15 +65,59 @@ p.rego {
 
 .rego-wrapper input {
 	text-align: center;
-	padding: 0.8em;
+	padding: 0.4em;
 	border-radius: 5px;
     margin: 5px;
     width: 35%;
+    font-size: 0.8em;
 }
 
 #sixteen {
     width: 5%
 }
+
+/*styling for event create*/
+
+.event-new,
+.event-edit {
+	text-align: center;
+}
+
+.event-new form, 
+.event-edit form {
+	text-align: center;
+	font-size: 1.5em;
+}
+
+.event-new input,
+.event-edit input {
+	text-align: center;
+	padding: 0.4em;
+	border-radius: 5px;
+    margin: 5px;
+    width: 35%;
+    font-size: 0.8em;
+}
+
+#event_address, 
+#event_description {
+	font-size: 0.8em;
+	padding: 0.4em;
+	width: 35%;
+	border-radius: 5px;
+	text-align: center;
+}
+
+#event_date_time_1i,
+#event_date_time_2i,
+#event_date_time_3i,
+#event_date_time_4i,
+#event_date_time_5i {
+	font-size: 0.8em;
+	margin-bottom: 10px;
+}
+
+/*styling for event edit*/
 
 @media only screen 
   and (min-device-width: 375px) 
@@ -83,5 +130,6 @@ p.rego {
 	.homepage-wrapper p {
 		width: 80%;
 	}
+
 }
 

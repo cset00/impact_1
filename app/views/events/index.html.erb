@@ -1,4 +1,8 @@
-<%= link_to "new event", new_event_path %>
+<%  if  session[:admin_user_id] %>
+    <div class="rego">
+        <%= link_to "Add New Event", new_event_path %>
+    </div>
+<% end %>
 
 <table class="reg-table">
     <tr>
@@ -15,17 +19,21 @@
         <td><%= event.subject %></td>
         <td><%= event.address %></td>
         <td><%= link_to 'Show', event_path(event.id) %></td>
-        <td><%= link_to 'Edit', edit_event_path(event.id)%></td>
-        <td>
-            <%= form_tag "/events/#{event.id}", method: 'delete' do %>
-                <button class="submit-btn">Delete</button>
-            <% end %> 
-        </td>
-        <td>
-            <%= form_tag "/events/#{event.id}/cancel", method: 'post' do %>
-                <button class="submit-btn">Cancel</button>
-            <% end %> 
-        </td>
+        <% if session[:admin_user_id] %>
+            <td><%= link_to 'Edit', edit_event_path(event.id)%></td>
+            <td>
+                <%= form_tag "/events/#{event.id}", method: 'delete' do %>
+                    <button class="submit-btn">Delete</button>
+                <% end %> 
+            </td>
+        
+            <td>
+                <%= form_tag "/events/#{event.id}/cancel", method: 'post' do %>
+                    <button class="submit-btn">Cancel</button>
+                <% end %> 
+            </td>
+        <% end %>
     </tr>
     <% end %>
 </table>
+

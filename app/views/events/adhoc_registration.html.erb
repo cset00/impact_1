@@ -1,8 +1,9 @@
 
 <div class="rego-wrapper">
-  <p class="rego">We love welcoming new volunteers! <br>Register here for info on our events.</p>
+  <p class="rego">Register a new user as attending <%= @event.subject %></p>
 
-  <%= simple_form_for @reg_user, :method => 'post' do |f| %>
+  <%= simple_form_for @reg_user, :url => url_for(:action => 'adhoc_register', :controller => 'events'), :method => 'post' do |f| %>
+
     <%= f.input :first_name, label: false, error: 'Please enter your first name' %>
     <%= f.input :last_name, label: false, error: 'Please enter your last name' %>
     <%= f.input :email, label: false %>
@@ -15,14 +16,9 @@
       <%= f.input :suburb, label: false %>
     </div>
     <%= f.input :contact_num, label: false %>
-    <%= f.button :submit, "Register to receive emails", :class => "reg-button" %>
+    <%= f.button :submit, "Register as attending", :class => "reg-button" %>
 
   <% end %>
-
-  <% if  session[:admin_user_id] %>
-    <a href="/reg_users">See list of all registered volunteers.</a>
-  <% end %>
-  
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -37,4 +33,3 @@
 
 
 </script>
-

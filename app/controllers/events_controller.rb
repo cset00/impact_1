@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate!, except: [:show, :index ]
 
   def index
     @events = Event.where(active: true)
@@ -58,10 +59,35 @@ class EventsController < ApplicationController
     event.save
   end
 
+  def adhoc_registration
+    @reg_user = RegUser.new
+    @event = Event.find(params[:id])
+  end
+
+  def adhoc_register
+    @event = Event.find(params[:id])
+    @reg_user = RegUser.new(reg_user_create_params)
+    @reg_user.active_sub = true
+    if @reg_user.save
+        Rsvp.create(
+            reg_user: @reg_user,
+            event: @event,
+            active: true,
+            attended: true
+        )
+        redirect_to event_path(@event.id)
+    else
+        render :adhoc_registration
+    end
+  end
 
   private
   
   def create_params
     params.require(:event).permit(:date_time, :address, :subject, :description)
+  end
+
+  def reg_user_create_params
+    params.require(:reg_user).permit(:first_name, :last_name, :email, :school, :suburb, :contact_num)
   end
 end
