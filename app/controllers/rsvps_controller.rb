@@ -55,7 +55,7 @@ class RsvpsController < ApplicationController
     rsvp = Rsvp.find(params[:id])
     rsvp.attended = true
     rsvp.save
-
+    redirect_to event_path(rsvp.event.id)
   end
 
   private
