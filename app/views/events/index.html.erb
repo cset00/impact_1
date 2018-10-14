@@ -1,6 +1,6 @@
 <%  if  session[:admin_user_id] %>
-    <div class="rego">
-        <%= link_to "Add New Event", new_event_path %>
+    <div class="new-event-btn">
+        <%= link_to "Add New Event", new_event_path, :class => "reg-button" %>
     </div>
 <% end %>
 
