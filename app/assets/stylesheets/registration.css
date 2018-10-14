@@ -76,6 +76,9 @@ p.rego {
     width: 5%
 }
 
+#reg_user_active_sub {
+	width: 5%;
+}
 /*styling for event create*/
 
 .event-new,
