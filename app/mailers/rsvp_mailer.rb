@@ -1,5 +1,5 @@
 class RsvpMailer < ApplicationMailer
-    default from: 'no-reply@impactforwomen.org.au'
+    default from: "no-reply@#{ENV['HOST_URL']}"
     layout 'mailer'
 
     def rsvp_email(rsvp)

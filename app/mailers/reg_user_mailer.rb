@@ -1,5 +1,5 @@
 class RegUserMailer < ApplicationMailer
-    default from: 'no-reply@impactforwomen.org.au'
+    default from: "no-reply@#{ENV['HOST_URL']}"
     layout 'mailer'
 
     def welcome_email(user)
