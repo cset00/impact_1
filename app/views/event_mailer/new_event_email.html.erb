@@ -26,7 +26,6 @@
     </div>
     <small>(or copy and paste the link into your browser).</small>
     
-    <%= render 'email_partials/html_help_section' %>
 
     <p>
         Best regards,
@@ -35,7 +34,14 @@
         The Impact Team
     </p>
 
+
+
+
+<footer>
     <%= render 'email_partials/html_copyr_footer', :uid => @reg_user.id %>
+</footer>
+    <%= render 'email_partials/html_help_section' %>
 
   </body>
+  
 </html>

@@ -4,7 +4,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-
+     <%= render 'email_partials/email_style' %>
     <%= render "email_partials/html_header" %>
 
     <h1>Hi <%= @rsvp.reg_user.first_name %>,</h1>
@@ -33,11 +33,10 @@
         If you're no longer able to attend click the link below...
     </p>
     <div class="event-link-box">
-        <%= "#{ENV['HOST']}/rsvps/#{@rsvp.id}/cancel" %>
+        <%= link_to "#{ENV['HOST']}/rsvps/#{@rsvp.id}/cancel", "#{ENV['HOST']}/rsvps/#{@rsvp.id}/cancel" %>
     </div>
     <small>(or copy and paste the link into your browser).</small>
     
-    <%= render 'email_partials/html_help_section' %>
 
     <p>
         Best regards,
@@ -48,5 +47,6 @@
 
     <%= render 'email_partials/html_copyr_footer', :uid => @rsvp.reg_user.id %>
 
+    <%= render 'email_partials/html_help_section' %>
   </body>
 </html>

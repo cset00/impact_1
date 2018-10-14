@@ -26,18 +26,22 @@
 
 /* email assistance note */
 .email-assist-wrapper {
-  display: inline-block;
-  max-width: 80%;
-  margin-left: 10%; 
+  display: flex;
+  max-width: 90%;
+  margin:auto; 
 }
 
 .email-assist-image {
-  margin-left: 10%;
-  width: 20%; 
+  flex:1; 
+}
+.email-assist-image img{
+  height:70%;
+  width: 70%;
+  padding: 10%;
 }
 
 .email-assist-text {
-  width: 70%;
+  flex:3;
 }
 
 /* link box */
@@ -45,12 +49,16 @@
   background-color: #FC0D1B;
   max-width: 75%;
   margin-left: 10%;
-  padding: 5%;
+  padding: 5px;
+  text-align: center;
 }
 
-.email-assist-contact {
-  float: right;
+.event-link-box a{
+  color: white;
+  text-align: center;
 }
+
+
 
 .impact-text {
   font-weight: 600; 
