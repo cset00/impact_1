@@ -22,7 +22,7 @@
         <%= @event.description %>
     </p>
     <div>
-        <%= "#{ENV['HOST']}/rsvps/new?event_id=#{@event.id}&reg_user_id=#{@reg_user.id}" %>
+        <%= "#{ENV['HOST_URL']}/rsvps/new?event_id=#{@event.id}&reg_user_id=#{@reg_user.id}" %>
     </div>
     <small>(or copy and paste the link into your browser).</small>
     
