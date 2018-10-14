@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   
   resources :rsvps, only: [:destroy, :create, :new]
   get   '/rsvps/:id/cancel', to: 'rsvps#cancel'
-  
+  put   '/rsvps/:id/attended', to: 'rsvps#mark_attended'
+
 end

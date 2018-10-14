@@ -1,5 +1,5 @@
 class RsvpsController < ApplicationController
-    
+    before_action :authenticate!, only: [:mark_attended ]
   def index
     @rsvps = Rsvp.all
   end
@@ -49,6 +49,13 @@ class RsvpsController < ApplicationController
         @message = "You're no longer attending #{rsvp.event.subject}, thanks for keeping us updated."
     end
     render :template => 'homepage/index'
+  end
+
+  def mark_attended
+    rsvp = Rsvp.find(params[:id])
+    rsvp.attended = true
+    rsvp.save
+
   end
 
   private
