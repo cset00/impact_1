@@ -33,9 +33,9 @@
         If you're no longer able to attend click the link below...
     </p>
     
-    <div class="event-link-box">
-        <%= link_to "#{ENV['HOST']}/rsvps/#{@rsvp.id}/cancel", "#{ENV['HOST']}/rsvps/#{@rsvp.id}/cancel" %>
 
+    <div class="event-link-box">
+        <%= link_to "#{ENV['HOST_URL']}/rsvps/#{@rsvp.id}/cancel", "#{ENV['HOST_URL']}/rsvps/#{@rsvp.id}/cancel" %>
     </div>
     <small>(or copy and paste the link into your browser).</small>
     
