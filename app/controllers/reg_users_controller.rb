@@ -41,7 +41,7 @@ class RegUsersController < ApplicationController
 	def create
 		@reg_user = RegUser.new(create_params)
 		@reg_user.active_sub = true
-        if @reg_user.save 
+        if @reg_user.save
             RegUserMailer.welcome_email(@reg_user).deliver_later
             @message = "Thanks for signing up as a volunteer #{@reg_user.first_name}, be sure to check your emails to keep up to date with our latest events."
     		render :template => 'homepage/index'
