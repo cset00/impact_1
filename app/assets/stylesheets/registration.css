@@ -79,6 +79,10 @@ p.rego {
 #reg_user_active_sub {
 	width: 5%;
 }
+
+.red {
+	color: #FC0D1B;
+}
 /*styling for event create*/
 
 .event-new,
