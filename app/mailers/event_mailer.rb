@@ -1,5 +1,5 @@
 class EventMailer < ApplicationMailer
-    default from: 'no-reply@impactforwomen.org.au'
+    default from: "no-reply@#{ENV['HOST_URL']}"
     layout 'mailer'
 
     def new_event_email(event, reg_user)
