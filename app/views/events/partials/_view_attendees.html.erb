@@ -1,6 +1,6 @@
 <h2 class="event-h2"> Attendees <span>(<%= @event.rsvps.length %>)</span></h2>
 
-<%# if  session[:admin_user_id] %>
+<% if  session[:admin_user_id] %>
   <div class="btn-containers">
     <a href="" class="reg-button rsvp-reg-btn no-rsvp-btn">View registered volunteers who didn't RSVP</a>
     <a href="/events/<%= @event.id %>/adhoc_registration" class="reg-button rsvp-reg-btn">Register and RSVP new volunteers</a>
@@ -17,66 +17,20 @@
           
           
           <div class="attendees-right">
-            <label class="container-cbox" for=""> <a href="/confirm"> Attending?</a>
+            <%# <label class="container-cbox" for=""> <a href="/confirm"> Attending?</a> %>
+            <label class="container-cbox" for="">Attending?
               <input class ="att-checkbox" type="checkbox" value=<%= rsvp.reg_user.email %> >
-              <span class="checkmark"></span>
+              <%# <span class="checkmark"></span> %>
             </label>
           </div>
 
         </div>
         <% end %>
-
-      <div class="attendees">
-        <div class="attendees-left">
-          <p class="event-p">Name (this is a dummy)</p>
-          <p class="event-p">email</p>
-          <p class="event-p">contact number</p>
-        </div>
-        
-        <div class="attendees-right">
-          <label class="container-cbox" for="">Attending?
-              <input class ="att-checkbox" type="checkbox" value="Attending">
-              <span class="checkmark"></span>
-            </label>
-        </div>
-      </div>
-
-      <div class="attendees">
-        <div class="attendees-left">
-          <p class="event-p">Name (this is a dummy)</p>
-          <p class="event-p">email</p>
-          <p class="event-p">contact number</p>
-        </div>
-        
-        <div class="attendees-right">
-          <label class="container-cbox" for="">Attending?
-              <input class ="att-checkbox" type="checkbox" value="Attending">
-              <span class="checkmark"></span>
-            </label>
-        </div>
-      </div>
-
-      <div class="attendees">
-        <div class="attendees-left">
-          <p class="event-p">Name (this is a dummy)</p>
-          <p class="event-p">email</p>
-          <p class="event-p">contact number</p>
-        </div>
-        
-        <div class="attendees-right">
-          <label class="container-cbox" for="">Attending?
-              <input class ="att-checkbox" type="checkbox" value="Attending">
-              <span class="checkmark"></span>
-            </label>
-        </div>
-
-      </div>
-    </table>
   </div>
 
-<%# else %>
-  <%# <p>You can only view attendees if you're logged in as an admin</p> %>
-<%# end %>
+<% else %>
+   <p>You can only view attendees if you're logged in as an admin</p>
+<% end %>
 
 
 
@@ -89,9 +43,15 @@
   
 
   attendeesContainer.addEventListener('click',function(e){
-    if (e.target.className.includes('checkmark')){
-     clicked_email = e.target.parentNode.firstChild.nextSibling.value
+    if (e.target.className.includes('container-cbox')){
+     var text = e.target.parentNode.firstChild.nextSibling.innerHTML
 
+    // console.log(e.target.parentNode.firstChild.nextSibling.innerHTML)
+    // console.log(clicked_email)
+     e.target.parentNode.parentNode.classList.toggle('color-chk')
+    //  e.target.parentNode.firstChild.nextSibling.classList.toggle('color-chk')
+    text = "Attended"
+    
   
       // e.target.classList.toggle('color-ch')
     }
