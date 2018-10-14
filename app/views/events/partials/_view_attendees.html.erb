@@ -17,16 +17,20 @@
           
           
           <div class="attendees-right">
-            <%# <label class="container-cbox" for=""> <a href="/confirm"> Attending?</a> %>
-            <label class="container-cbox" for="">Attending?
-              <input class ="att-checkbox" type="checkbox" value=<%= rsvp.reg_user.email %> >
-              <%# <span class="checkmark"></span> %>
-            </label>
+                <% unless rsvp.attended %>
+                    <%= form_tag "/rsvps/#{rsvp.id}/attended", method: 'put' do %>
+                        <button class="submit-btn">Mark Present</button>
+                    <% end %> 
+
+                <% else %>
+                    Attending
+                <% end %>
+                
+
           </div>
 
         </div>
         <% end %>
-  </div>
 
 <% else %>
    <p>You can only view attendees if you're logged in as an admin</p>

@@ -4,12 +4,12 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-
+    <%= render 'email_partials/email_style' %>
     <%= render "email_partials/html_header" %>
     
     <h1>We have a new event, <%= @reg_user.first_name %></h1>
     <p>
-        Thank you for your on goiong support for Impact for Women! Every volunteer helps us to make a difference.
+        Thank you for your on goiong support for <span>impact</span> for Women! Every volunteer helps us to make a difference.
     </p>
     <p>We have a new event comming up</p>
     <p>
@@ -21,12 +21,12 @@
     <p>
         <%= @event.description %>
     </p>
-    <div>
-        <%= "#{ENV['HOST']}/rsvps/new?event_id=#{@event.id}&reg_user_id=#{@reg_user.id}" %>
+
+    <div class="event-link">
+        <%= link_to "#{ENV['HOST_URL']}/rsvps/new?event_id=#{@event.id}&reg_user_id=#{@reg_user.id}", "#{ENV['HOST_URL']}/rsvps/new?event_id=#{@event.id}&reg_user_id=#{@reg_user.id}" %>
     </div>
     <small>(or copy and paste the link into your browser).</small>
     
-    <%= render 'email_partials/html_help_section' %>
 
     <p>
         Best regards,
@@ -35,7 +35,14 @@
         The Impact Team
     </p>
 
+
+
+
+<footer>
     <%= render 'email_partials/html_copyr_footer', :uid => @reg_user.id %>
+</footer>
+    <%= render 'email_partials/html_help_section' %>
 
   </body>
+  
 </html>

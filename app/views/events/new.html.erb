@@ -3,10 +3,10 @@
 <p>Create your new <span class="bold">impact</span> event below.</p>
 
 <%= simple_form_for @event, :method => 'post' do |f| %>
-    <%= f.input :date_time, label: 'Your username please', error: 'Date and time mandatory, please make sure you enter them.' %>
-    <%= f.input :address, :class => "text-input"%>
-    <%= f.input :subject %>
-    <%= f.input :description, inline_label: 'This will appear on the email', :class => "text-input" %>
+    <%= f.input :date_time, label:false, error: 'Date and time mandatory, please make sure you enter them.' %>
+    <%= f.input :address, label:false, :class => "text-input"%>
+    <%= f.input :subject, label:false %>
+    <%= f.input :description, label:false, inline_label: 'This will appear on the email', :class => "text-input" %>
     <%= f.button :submit, :class => "reg-button" %>
 <% end %>
 

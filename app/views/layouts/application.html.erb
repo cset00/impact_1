@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Impact1</title>
+    <title>impact</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,7 +13,7 @@
   <body>
     <header>
         <div class="app-image">
-            <%= image_tag "/impact-red-logo.svg" %>
+            <a href="/"><%= image_tag "/impact-red-logo.svg" %></a>
         </div>
         <nav>
             <ul>
@@ -23,10 +23,15 @@
                 <li>
                     <%= link_to 'Events', events_path %>
                 </li>
-                <li>
-                    <%= link_to 'Register', new_reg_user_path %>
-                </li>
+                 <% if  !session[:admin_user_id] %>
+                    <li>
+                        <%= link_to 'Register', new_reg_user_path %>
+                    </li>
+                <% end %>
                 <% if  session[:admin_user_id] %>
+                    <li>
+                        <%= link_to 'All Users', reg_users_path %>
+                    </li>
                     <li>
                         <%= link_to 'Sign Out', session_path,:method => :delete %>
                     </li>
